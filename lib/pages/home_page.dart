@@ -9,7 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Catalog App"),
+        // ignore: prefer_const_constructors
+        title: Text("Catalog App"),
       ),
       body: Center(
         // ignore: avoid_unnecessary_containers
