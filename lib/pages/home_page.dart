@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
   final int days = 30;
@@ -20,7 +22,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       // ignore: prefer_const_constructors
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
