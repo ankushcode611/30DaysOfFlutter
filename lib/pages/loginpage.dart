@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/routes.dart';
 
-// ignore: use_key_in_widget_constructors
 class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -43,26 +42,21 @@ class _LoginPageState extends State<LoginPage> {
                 fit: BoxFit.cover,
                 height: 250,
               ),
-              // ignore: prefer_const_constructors
               SizedBox(
                 height: 20,
               ),
               Text(
                 "Welcome $name",
-                // ignore: prefer_const_constructors
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
-              // ignore: prefer_const_constructors
               SizedBox(
                 height: 20.0,
               ),
               Padding(
-                // ignore: prefer_const_constructors
                 padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 32),
                 child: Column(
                   children: [
                     TextFormField(
-                        // ignore: prefer_const_constructors
                         decoration: InputDecoration(
                             hintText: "Enter Username", labelText: "Username"),
                         validator: (value) {
@@ -77,7 +71,6 @@ class _LoginPageState extends State<LoginPage> {
                         }),
                     TextFormField(
                       obscureText: true,
-                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                           hintText: "Enter Password", labelText: "Password"),
                       validator: (value) {
@@ -95,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     Material(
-                      color: Colors.purple,
+                      color: Colors.black,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
@@ -108,12 +101,12 @@ class _LoginPageState extends State<LoginPage> {
                           child: changeButton
                               ? Icon(
                                   Icons.done,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 )
                               : Text(
                                   "login",
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
                                 ),

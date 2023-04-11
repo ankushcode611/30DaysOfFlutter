@@ -20,44 +20,51 @@ class MyDrawer extends StatelessWidget {
                 child: UserAccountsDrawerHeader(
                   margin: EdgeInsets.zero,
                   decoration: BoxDecoration(color: Colors.white),
-                  accountName: Text("Ankush Thakur"),
-                  accountEmail: Text("ankush.code611@gmail.com"),
+                  accountName: Text(
+                    "Ankush Thakur",
+                    textScaleFactor: 1.5,
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  accountEmail: Text(
+                    "ankush.code611@gmail.com",
+                    textScaleFactor: 1,
+                    style: TextStyle(color: Colors.grey),
+                  ),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(imageUrl),
                   ),
                 )),
-            
             ListTile(
               leading: Icon(
                 CupertinoIcons.home,
-                color: Colors.purple,
+                color: Colors.black,
               ),
               title: Text(
                 "Home",
                 textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.purple),
+                style: TextStyle(color: Colors.black),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
-                color: Colors.purple,
+                color: Colors.black,
               ),
               title: Text(
                 "Profile",
                 textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.purple),
+                style: TextStyle(color: Colors.black),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
-                color: Colors.purple,
+                color: Colors.black,
               ),
               title: Text(
                 "Email me",
                 textScaleFactor: 1.2,
-                style: TextStyle(color: Colors.purple),
+                style: TextStyle(color: Colors.black),
               ),
             )
           ],
