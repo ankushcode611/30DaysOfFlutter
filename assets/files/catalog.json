@@ -1,0 +1,29 @@
+{
+    "category": "Smartphones",
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 14",
+            "desc": "The latest smartphone from Apple with a new A15 Bionic chip and Ceramic Shield",
+            "price": 799,
+            "color": "Midnight",
+            "image": "https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
+        },
+        {
+            "id": 2,
+            "name": "Samsung Galaxy S22",
+            "desc": "A high-end Android smartphone with 5G connectivity and a powerful Exynos 2100 chip",
+            "price": 699,
+            "color": "Phantom Black",
+            "image": "https://media.croma.com/image/upload/v1662439603/Croma%20Assets/Communication/Mobiles/Images/248912_dfugkj.png"
+        },
+        {
+            "id": 3,
+            "name": "Google Pixel 7",
+            "desc": "The latest smartphone from Google with a new Tensor chip and improved camera features",
+            "price": 599,
+            "color": "Stormy Black",
+            "image": "https://bestbuymobiles.in/wp-content/uploads/2023/01/61eTdIOfV1L._SL1500_-1.png"
+        }
+    ]
+}
