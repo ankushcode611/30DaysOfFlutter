@@ -38,6 +38,8 @@ dependencies:
   dependencies:
   google_fonts: ^4.0.3
 
+  velocity_x: ^3.6.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
