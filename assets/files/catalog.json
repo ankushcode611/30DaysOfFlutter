@@ -4,7 +4,7 @@
         {
             "id": 1,
             "name": "iPhone 14",
-            "desc": "New A15 Bionic chip & Ceramic Shield. Latest from Apple!",
+            "desc": "New A15 Bionic chip & Ceramic Shield.",
             "price": 799,
             "color": "Midnight",
             "image": "https://media.croma.com/image/upload/v1662655662/Croma%20Assets/Communication/Mobiles/Images/261979_oq7vjv.png"
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "name": "Samsung Galaxy S22",
-            "desc": "5G connectivity & powerful Exynos 2100 chip. Get it now!",
+            "desc": "5G connectivity & powerful Exynos 2100 chip.",
             "price": 699,
             "color": "Phantom Black",
             "image": "https://media.croma.com/image/upload/v1662439603/Croma%20Assets/Communication/Mobiles/Images/248912_dfugkj.png"
@@ -20,7 +20,7 @@
         {
             "id": 3,
             "name": "Google Pixel 7",
-            "desc": "New Tensor chip & advanced camera features. Upgrade today!",
+            "desc": "New Tensor chip & advanced camera features.",
             "price": 599,
             "color": "Stormy Black",
             "image": "https://www.technogoyani.com/wp-content/uploads/2022/10/Google-Pixel-7-Series.png"
@@ -28,7 +28,7 @@
         {
             "id": 4,
             "name": "AirPods Pro",
-            "desc": "H2-powered AirPods Pro for a peaceful listening experience. Get yours now!",
+            "desc": "H2-powered AirPods Pro for a peaceful listening experience.",
             "price": 249,
             "color": "White",
             "image": "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/r/1/r1612_airpods_pro_2nd_gen_pdp_image_position-2_v1_avail__en-in-removebg-preview.png"
@@ -36,7 +36,7 @@
         {
             "id": 5,
             "name": "Pixel Buds Pro",
-            "desc": "Custom processor, algorithms, and speakers with ANC. Experience it now!",
+            "desc": "Custom processor, algorithms, and speakers with ANC.",
             "price": 199,
             "color": "Charcoal",
             "image": "https://lh3.googleusercontent.com/vZbdwMkizIWp8OBlZNMiXXTkIimrT25B6eLJlXyr3W6-etNlEqb8J-pedA-Ftkutiq1i7yFNOCBCWlwYTmI0WlilfsWAhCO4RLA=s0"
@@ -44,7 +44,7 @@
         {
             "id": 6,
             "name": "Galaxy Buds2 Pro",
-            "desc": "Feel every note with the next-level listening experience. Buy now!",
+            "desc": "Feel every note with the next-level listening experience.",
             "price": 159,
             "color": "Bora Purple",
             "image": "https://media.croma.com/image/upload/v1661778655/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/260679_pk8i36.png"
@@ -52,7 +52,7 @@
         {
             "id": 7,
             "name": "MacBook Pro 14",
-            "desc": "Powerful and efficient MacBook Pro. Perfect for work!",
+            "desc": "Powerful and efficient MacBook Pro.",
             "price": 1999,
             "color": "Space Grey",
             "image": "https://www.aptronixindia.com/media/catalog/product/cache/31f0162e6f7d821d2237f39577122a8a/s/p/space_grey_macbook_pro_14_1.png"
@@ -60,7 +60,7 @@
         {
             "id": 8,
             "name": "Dell XPS 15",
-            "desc": "Exceptional for work and playing games, Perfect for gaming!",
+            "desc": "Exceptional for work and playing games.",
             "price": 1999,
             "color": "Carbon Alloy",
             "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/XPS_15_front_view_of_display.png"
