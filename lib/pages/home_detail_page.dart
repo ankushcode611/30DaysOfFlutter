@@ -13,7 +13,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -30,7 +32,7 @@ class HomeDetailPage extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   shape: MaterialStateProperty.all(StadiumBorder())),
               child: "Buy".text.make(),
-            ).wh(100, 50)
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -55,9 +57,20 @@ class HomeDetailPage extends StatelessWidget {
                     catalog.name.text.xl4
                         .color(MyTheme.darkBluishColor)
                         .bold
-                        .make(),
-                    catalog.desc.text.textStyle(context.captionStyle).xl.make(),
+                        .make()
+                        .p1(),
+                    catalog.desc.text.center
+                        .textStyle(context.captionStyle)
+                        .xl
+                        .make()
+                        .p4(),
                     10.heightBox,
+                    "The iPhone 14 is the latest release from Apple's iconic smartphone lineup, boasting advanced camera technology, lightning-fast processing, and ample storage space."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .align(TextAlign.center)
+                        .make()
+                        .p8()
                   ],
                 ).py64(),
               ),
