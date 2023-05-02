@@ -3,6 +3,14 @@ import 'dart:convert';
 
 class CatalogModel {
   static List<Item> items = [];
+
+  //get Item by ID
+  static Item getById(int id) => 
+  // ignore: null_closures
+  items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get Item by position
+  static Item getByPosition(int pos) => items[pos];
 }
 
 class Item {
@@ -64,8 +72,7 @@ class Item {
 
   String toJson() => json.encode(toMap());
 
-  factory Item.fromJson(String source) =>
-      Item.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Item.fromJson(String source) => Item.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
