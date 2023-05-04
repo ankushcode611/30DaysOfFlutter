@@ -1,8 +1,18 @@
-import 'dart:developer';
+
+// ignore_for_file: unnecessary_null_comparison
 
 import 'package:test_lifecycle_statefulwidget/models/catalog.dart';
 
 class CartModel {
+
+  static final  cartModel = CartModel._internal();
+
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
+
   // catalog field
   late CatalogModel _catalog;
 
