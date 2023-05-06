@@ -2,7 +2,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers
 
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -54,13 +53,13 @@ class _HomePageState extends State<HomePage> {
         ),
         body: SafeArea(
           child: Container(
-            padding: Vx.m12,
+            padding: Vx.m8,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CatalogHeader(),
                 if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                  CatalogList().py16().expand()
+                  CatalogList().py24().expand()
                 else
                   CircularProgressIndicator().centered().expand(),
               ],

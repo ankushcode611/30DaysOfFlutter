@@ -5,12 +5,15 @@ import '../themes.dart';
 class CatalogHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
-        "Trending products".text.xl2.make(),
-      ],
+    return Container(
+      padding: EdgeInsets.only(left: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
+          "Trending products".text.xl2.make(),
+        ],
+      ),
     );
   }
 }
