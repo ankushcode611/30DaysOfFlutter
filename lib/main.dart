@@ -8,7 +8,6 @@ import 'package:test_lifecycle_statefulwidget/pages/loginpage.dart';
 import 'package:test_lifecycle_statefulwidget/utils/routes.dart';
 import 'package:test_lifecycle_statefulwidget/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import 'core/store.dart';
 
 void main() {
