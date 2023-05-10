@@ -1,10 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers
-
 import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:test_lifecycle_statefulwidget/core/store.dart';
+import 'package:test_lifecycle_statefulwidget/models/cart.dart';
 import 'package:test_lifecycle_statefulwidget/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../models/catalog.dart';
@@ -27,76 +26,76 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
-  // loadData() async {
-  //   await Future.delayed(Duration(seconds: 2));
-  //   // final catalogJson =
-  //   // await rootBundle.loadString('assets/files/catalog.json');
-  //   final response = await http.get(Uri.parse(url));
-  //   final catalogJson = response.body;
+  loadData() async {
+    var headers = {'Content-Type': 'application/json'};
+    var request = http.Request(
+        'GET',
+        Uri.parse(
+            'https://api.myjson.online/v1/records/2a319c53-0bc7-441a-bd9e-7d471203266f'));
 
-  //   final decodeData = jsonDecode(catalogJson);
-  //   var productsData = decodeData["products"];
-  //   CatalogModel.items = List.from(productsData)
-  //       .map<Item>((item) => Item.fromMap(item))
-  //       .toList();
-  //   setState(() {});
-  // }
+    request.headers.addAll(headers);
 
-loadData() async {
-  var headers = {'Content-Type': 'application/json'};
-  var request = http.Request(
-      'GET',
-      Uri.parse(
-          'https://api.myjson.online/v1/records/2a319c53-0bc7-441a-bd9e-7d471203266f'));
+    http.StreamedResponse response = await request.send();
 
-  request.headers.addAll(headers);
-
-  http.StreamedResponse response = await request.send();
-
-  if (response.statusCode == 200) {
-    var catalogJson = await response.stream.bytesToString();
-    var decodeData = jsonDecode(catalogJson);
-    var productsData = decodeData["data"]["products"];
-    CatalogModel.items = List.from(productsData)
-        .map<Item>((item) => Item.fromMap(item))
-        .toList();
-    setState(() {});
-  } else {
-    print(response.reasonPhrase);
+    if (response.statusCode == 200) {
+      var catalogJson = await response.stream.bytesToString();
+      var decodeData = jsonDecode(catalogJson);
+      var productsData = decodeData["data"]["products"];
+      CatalogModel.items = List.from(productsData)
+          .map<Item>((item) => Item.fromMap(item))
+          .toList();
+      setState(() {});
+    } else {
+      print(response.reasonPhrase);
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore);
+
     return Scaffold(
-        backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: context.theme.buttonColor,
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white,
+      backgroundColor: context.canvasColor,
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (BuildContext context, dynamic _, VxStatus? status) {
+          final _cart = (VxState.store as MyStore).cart;
+          return FloatingActionButton(
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+            backgroundColor: context.theme.buttonColor,
+            child: Icon(
+              CupertinoIcons.cart,
+              color: Colors.white,
+            ),
+          ).badge(
+              color: Vx.red500,
+              size: 20,
+              count: _cart.items.length,
+              textStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ));
+        },
+      ),
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m8,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                CatalogList().py24().expand()
+              else
+                CircularProgressIndicator().centered().expand(),
+            ],
           ),
         ),
-        body: SafeArea(
-          child: Container(
-            padding: Vx.m8,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CatalogHeader(),
-                if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                  CatalogList().py24().expand()
-                else
-                  CircularProgressIndicator().centered().expand(),
-              ],
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }
