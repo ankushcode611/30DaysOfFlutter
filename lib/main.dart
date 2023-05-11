@@ -18,35 +18,34 @@ void main() {
   runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
-// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      routeInformationParser: VxInformationParser(),
-      routerDelegate: VxNavigator(routes: {
-        "/": (_, __) => MaterialPage(child: LoginPage()),
-        MyRoutes.homeRoute: (_, __) => MaterialPage(child: HomePage()),
-        MyRoutes.homeDetailsRoute: (uri, _){
-          final catalog = (VxState.store as MyStore).catalog.getById(int.parse(uri.queryParameters["id"]!));
-          return MaterialPage(child: HomeDetailPage(
-            catalog: catalog,
-          ));
-        },
-           
-        MyRoutes.loginRoute: (_, __) => MaterialPage(child: LoginPage()),
-        MyRoutes.cartRoute: (_, __) => MaterialPage(child: CartPage())
-      }),
-      // initialRoute: MyRoutes.homeRoute,
-      // routes: {
-      //   "/": (context) => LoginPage(),
-      //   MyRoutes.homeRoute: (context) => HomePage(),
-      //   MyRoutes.loginRoute: (context) => LoginPage(),
-      //   MyRoutes.cartRoute: (context) => CartPage(),
+      initialRoute: MyRoutes.homeRoute,
+      onGenerateRoute: (settings) {
+        if (settings.name == MyRoutes.homeDetailsRoute) {
+          final uri = Uri.parse(settings.name!);
+          final catalog = (VxState.store as MyStore)
+              .catalog
+              .getById(int.parse(uri.queryParameters["id"]!));
+          return MaterialPageRoute(
+            builder: (_) => HomeDetailPage(catalog: catalog),
+            settings: settings,
+          );
+        }
+        return null;
+      },
+      routes: {
+        "/": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.cartRoute: (context) => CartPage(),
+      },
     );
   }
 }

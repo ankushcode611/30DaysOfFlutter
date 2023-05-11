@@ -1,4 +1,3 @@
-
 // ignore_for_file: unnecessary_null_comparison
 
 import 'package:test_lifecycle_statefulwidget/core/store.dart';
@@ -15,7 +14,6 @@ class CartModel {
   // get catalog
   CatalogModel get catalog => _catalog;
 
-
   set catalog(CatalogModel newCatalog) {
     assert(newCatalog != null);
     _catalog = newCatalog;
@@ -29,31 +27,26 @@ class CartModel {
       items.fold(0, (total, current) => total + current.price);
 
   void remove(Item item) {}
-
-
 }
 
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+  AddMutation(this.item);
 
-class AddMutation extends VxMutation<MyStore>{
-final Item item;
-AddMutation(this.item);
-
-@override
-perform() {
+  @override
+  perform() {
     // TODO: implement perform
     store?.cart._itemIds.add(item.id.toInt());
   }
-
 }
 
-class RemoveMutation extends VxMutation<MyStore>{
-final Item item;
-RemoveMutation(this.item);
+class RemoveMutation extends VxMutation<MyStore> {
+  final Item item;
+  RemoveMutation(this.item);
 
-@override
-perform() {
+  @override
+  perform() {
     // TODO: implement perform
     store?.cart._itemIds.remove(item.id.toInt());
   }
-
 }
