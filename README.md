@@ -1,4 +1,4 @@
-# test_lifecycle_statefulwidget
+# Catalog App
 
 A new Flutter project.
 
