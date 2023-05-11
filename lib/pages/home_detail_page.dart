@@ -57,7 +57,7 @@ class HomeDetailPage extends StatelessWidget {
                         .make()
                         .p4(),
                     10.heightBox,
-                    "The iPhone 14 is the latest release from Apple's iconic smartphone lineup, boasting advanced camera technology, lightning-fast processing, and ample storage space."
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi."
                         .text
                         .textStyle(context.captionStyle)
                         .align(TextAlign.center)
